@@ -1,3 +1,4 @@
+#ec2 variables
 variable "instance_names" {
     type = list
     default = ["db","backend","frontend"]   
@@ -19,14 +20,12 @@ variable "common_tags" {
     default = {
         project     = "Expense"
         Environment = "Dev"
-        terraform   = "true"
-        
+        terraform   = "true" 
             
         }
-
-
     }
 
+#sg variables
 variable "sg_name" {
     default = "allow-ssh"
   
@@ -50,5 +49,17 @@ variable "protocol" {
 variable "allowed_cidr" {
     type = list(string)
     default = ["0.0.0.0/0"]
+  
+}
+
+#r53 variables
+
+variable "zone_id" {
+    default = "Z06637132BUJZNBW1LFI6"
+  
+}
+
+variable "domain_name" {
+    default = "dryfruitsspices.online"
   
 }
